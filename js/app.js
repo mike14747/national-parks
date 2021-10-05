@@ -1,14 +1,6 @@
 const apiKey = 'ldPNGdkCg4MooP2qY2V5QBBwZb3nfaoFeSCij7uL';
 
-function convertGPS(degrees, direction) {
-    let dir;
-    if (direction === 'latitude') {
-        degrees >= 0 ? dir = 'N' : dir = 'S';
-    } else {
-        degrees >= 0 ? dir = 'E' : dir = 'W';
-    }
-    return Math.abs(parseFloat(degrees)).toFixed(3) + ' ' + dir;
-}
+const convertGPS =  (degrees, direction) => Math.abs(parseFloat(degrees)).toFixed(3) + ' ' + (direction === 'latitude' ? degrees >= 0 ? dir = 'N' : dir = 'S' : degrees >= 0 ? dir = 'E' : dir = 'W');
 
 function renderData(data) {
     if (!data) return;
