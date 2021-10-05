@@ -1,6 +1,7 @@
 #root {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .card {
@@ -8,7 +9,7 @@
     border: 1px var(--mg-gray-3) solid;
     box-shadow: 3px 3px 6px 0 var(--mg-gray-4);
     width: 100%;
-    min-width: 300px;
+    min-width: 360px;
     max-width: 448px;
     margin: 0 1rem 2rem 1rem;
     padding: 1rem;
