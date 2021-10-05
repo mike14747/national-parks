@@ -1,0 +1,28 @@
+#root {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    border: 1px var(--mg-gray-3) solid;
+    box-shadow: 3px 3px 6px 0 var(--mg-gray-4);
+    width: 100%;
+    min-width: 300px;
+    max-width: 448px;
+    margin: 0 1rem 2rem 1rem;
+    padding: 1rem;
+}
+
+.card h3 {
+    color: firebrick;
+    font-size: clamp(1rem, 0.55vw + 0.55rem, 1.2rem);
+    text-align: center;
+}
+
+.description {
+}
+
+.image {
+    width: 100%;
+}

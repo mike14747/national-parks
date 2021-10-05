@@ -10,14 +10,20 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <h1>California National Parks</h1>
+        <label for="state">
+            <select id="state" onchange="fetchData()">
+                <option value="ca">California</option>
+                <option value="oh">Ohio</option>
+            </select>
+        </label>
     </header>
-    <main>
+    <main class="container">
         <article id="root">
         </article>
     </main>
-    <footer>
+    <footer class="container">
         &copy; 2021 National Parks 
     </footer>
 
