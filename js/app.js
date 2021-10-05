@@ -1,6 +1,6 @@
 const apiKey = 'ldPNGdkCg4MooP2qY2V5QBBwZb3nfaoFeSCij7uL';
 
-const convertGPS =  (degrees, direction) => Math.abs(parseFloat(degrees)).toFixed(3) + ' ' + (direction === 'latitude' ? degrees >= 0 ? dir = 'N' : dir = 'S' : degrees >= 0 ? dir = 'E' : dir = 'W');
+const convertGPS = (deg, dir) => Math.abs(parseFloat(deg)).toFixed(3) + ' ' + (dir === 'latitude' ? deg >= 0 ? 'N' : 'S' : deg >= 0 ? 'E' : 'W');
 
 function renderData(data) {
     if (!data) return;
