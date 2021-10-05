@@ -1,3 +1,5 @@
+document.getElementById("state").innerHTML = stateList.map(state => `<option value="${state.value}">${state.name}</option>`).join('');
+
 const apiKey = 'ldPNGdkCg4MooP2qY2V5QBBwZb3nfaoFeSCij7uL';
 
 const convertGPS = (deg, dir) => Math.abs(parseFloat(deg)).toFixed(3) + ' ' + (dir === 'latitude' ? deg >= 0 ? 'N' : 'S' : deg >= 0 ? 'E' : 'W');

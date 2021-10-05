@@ -4,6 +4,10 @@
     justify-content: space-around;
 }
 
+.header {
+    width: 100%;
+}
+
 .card {
     flex: 1;
     border: 1px var(--mg-gray-3) solid;
