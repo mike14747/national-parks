@@ -1,0 +1,55 @@
+.header {
+    width: 100%;
+    background-color: var(--mg-gray-1);
+    margin-bottom: 1rem;
+    border-bottom: 1px var(--theme-color-1) solid;
+}
+
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-left > h1 {
+    color: var(--theme-color-1);
+    font-size: clamp(1.4rem, 1vw + 0.9rem, 2.1rem);
+    margin: 0 0.5rem;
+}
+
+.header-right > label,
+.header-right > select {
+    display: block;
+    margin: 0;
+}
+
+.header-right > label {
+    color: var(--theme-color-1);
+    font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
+}
+
+.header-right > select {
+    font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
+    background-color: #ffffff;
+    border: 0;
+    outline: 1px var(--mg-gray-3) solid;
+    padding: 0.25rem 0;
+}
+
+.header-right > select > option {
+    background-color: var(--mg-yellow-pale);
+}
+
+.logo {
+    width: clamp(48px, 1.5vw + 36px, 80px);
+    height: auto;
+}
