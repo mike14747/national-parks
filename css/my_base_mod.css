@@ -1,13 +1,13 @@
 :root {
     /* start theme colors specific to this app */
 
-    --theme-color-1: #8fbc8f;
+    --theme-color-1: #006400;
     --theme-color-2: #8cbed6;
     --theme-color-3: #fdd5b1;
 
     /* end theme colors specific to this app */
 
-    --container-min-width: 320px;
+    --container-min-width: 360px;
     --container-max-width: 1334px;
 
     --mg-beige: #f5f5dc;
@@ -42,12 +42,11 @@
 }
 
 /* for semi-full height websites with next.js use #__next and with react use #root */
-/* #__next,
-#root {
+#wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-} */
+}
 
 html,
 body {
@@ -250,7 +249,7 @@ a:link {
 
 a:visited {
     /* color: var(--mg-blue); */
-    color: var(--mg-purple);
+    color: var(--mg-blue);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -602,7 +601,7 @@ template {
 /* use with the <main> element on pages */
 .main-container {
     /* enable flex: 1; on the next line for full or semi-full height websites */
-    /* flex: 1; */
+    flex: 1;
     width: 100%;
     min-width: var(--container-min-width);
     max-width: var(--container-max-width);
