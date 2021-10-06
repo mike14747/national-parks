@@ -48,6 +48,11 @@
     min-height: 100vh;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
 html,
 body {
     margin: 0;
@@ -642,6 +647,11 @@ h2.page-heading {
 }
 
 @media (min-width: 768px) {
+    #root {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 }
 
 @media (min-width: 1024px) {
