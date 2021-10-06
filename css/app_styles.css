@@ -10,56 +10,55 @@
     border-bottom: 1px var(--theme-color-1) solid;
 }
 
-.header-flex {
+.headerFlex {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0.50rem;
+    padding: 0.5rem;
 }
 
-.header-left {
+.headerLeft {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
 
-.header-left > h1 {
+.headerLeft > h1 {
     color: var(--theme-color-1);
     font-size: clamp(1.4rem, 1vw + 0.9rem, 2.1rem);
-    margin: 0 0.50rem;
+    margin: 0 0.5rem;
 }
 
-.header-right {
+.headerRight {
 }
 
-.header-right > label,
-.header-right > select {
+.headerRight > label,
+.headerRight > select {
     display: block;
     margin: 0;
 }
 
-.header-right > label {
+.headerRight > label {
     color: var(--mg-gray-7);
     font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
 }
 
-.header-right > select {
+.headerRight > select {
     background-color: #ffffff;
     font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
     border: 0;
     outline: 1px var(--mg-gray-3) solid;
     padding: 0.25rem 0;
-    /* max-width: 150px; */
 }
 
-.header-right > select > option {
+.headerRight > select > option {
     background-color: var(--mg-yellow-pale);
 }
 
 .logo {
-    width: clamp(48px, 1.50vw + 36px, 80px);
+    width: clamp(48px, 1.5vw + 36px, 80px);
     height: auto;
 }
 
@@ -77,38 +76,33 @@
 .hero > h2 {
     color: var(--mg-dark);
     font-size: clamp(1.6rem, 1.2vw + 1rem, 2.4rem);
-    background-color: rgba(255, 255, 255, 0.50);
-    padding: 0.50rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
     margin: 1rem;
 }
 
-.viewing-div {
-    background-color: rgba(0, 0, 0, 0.50);
+.viewingDiv {
+    background-color: rgba(0, 0, 0, 0.5);
     color: var(--mg-yellow-pale);
-    padding: 0.50rem;
+    padding: 0.5rem;
     margin: 1rem;
 }
 
-.viewing-div > p {
+.viewingDiv > p {
     margin: 0;
     text-align: center;
 }
 
-.viewing-text {
+.viewingText {
     color: var(--mg-orange-soft);
     font-size: clamp(1rem, 0.55vw + 0.55rem, 1.2rem);
 }
 
-#viewing { 
+#viewing {
     font-size: clamp(1.4rem, 1vw + 0.9rem, 2.1rem);
     font-variant: small-caps;
     letter-spacing: 1px;
 }
-
-/* #viewing::before {
-    content: '\27A5';
-    padding-right: 0.50rem;
-} */
 
 .footer {
     width: 100%;
@@ -127,7 +121,6 @@
 
 .footer p {
     font-size: clamp(0.9rem, 0.55vw + 0.55rem, 1.1rem);
-
 }
 
 .card {
@@ -159,7 +152,7 @@
     font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
 }
 
-.img-container {
+.imgContainer {
     text-align: center;
 }
 
@@ -191,34 +184,34 @@
     font-size: clamp(0.9rem, 0.55vw + 0.55rem, 1.1rem);
 }
 
-.activities-text {
+.activitiesText {
     color: var(--theme-color-1);
 }
 
 .icon {
     width: clamp(24px, 1vw + 18px, 32px);
     height: auto;
-    margin-right: 0.50rem;
+    margin-right: 0.5rem;
 }
 
-.footer-upper {
+.footerUpper {
     display: none;
 }
 
-.footer-upper-sm {
+.footerUpperSm {
     display: block;
 }
 
-.footer-lower {
+.footerLower {
     display: flex;
     flex-direction: column;
 }
 
-.footer-section-1 > p {
+.footerSection1 > p {
     text-align: center;
 }
 
-.footer-section-2 > p {
+.footerSection2 > p {
     text-align: center;
 }
 
@@ -237,20 +230,20 @@
         margin-bottom: 2rem;
     }
 
-    .footer-upper {
+    .footerUpper {
         display: block;
     }
 
-    .footer-upper-sm {
+    .footerUpperSm {
         display: none;
     }
 
-    .footer-lower {
+    .footerLower {
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .footer-section-2 > p {
+    .footerSection2 > p {
         text-align: right;
     }
 }
