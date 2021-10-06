@@ -19,6 +19,12 @@
     margin: 1rem;
 }
 
+.explore-icon {
+    width: clamp(32px, 2vw + 24px, 48px);
+    height: auto;
+    margin: 0 0.5rem 0.50rem 0;
+}
+
 .viewing-div {
     background-color: rgba(0, 0, 0, 0.5);
     color: var(--mg-yellow-pale);
