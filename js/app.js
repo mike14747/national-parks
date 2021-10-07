@@ -16,11 +16,7 @@ function renderData(data, stateName) {
             <p class=description>${park.description}</p>
             <div class="img-container"><img class="image" src="${park.images[0].url}" alt="${park.images[0].altText}" /></div>
             <p class="location"><strong>Location:</strong> ${convertGPS(park.latitude, 'latitude')} ${convertGPS(park.longitude, 'longitude')}</p>
-            <div class="activities"><span class="activities-text">Activities:</span>
-                <ul>
-                    ${park.activities.slice(0, 3).map(a => '<li>' + a.name + '</li>').join('')}
-                </ul>
-            </div>
+            <p class="activities"><span class="activities-text">Activities:</span> ${park.activities.slice(0, 3).map(a => a.name).join(', ')}</p>
             <p class="info"><a href="${park.url}" target="_blank"><span class="pointer">More Info</span></a></p>
         </div>`;
     });
@@ -32,7 +28,7 @@ function renderData(data, stateName) {
 async function fetchData() {
     const stateCode = document.getElementById("state").value;
     const stateName = document.querySelector(`[value=${stateCode}]`).getAttribute('data-name');
-    const url = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=12&api_key=';
+    const url = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=100&api_key=';
 
     try {
         const response = await fetch(url + apiKey);
