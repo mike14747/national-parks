@@ -28,7 +28,7 @@
 .viewing-div {
     background-color: rgba(0, 0, 0, 0.5);
     color: var(--mg-yellow-pale);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     margin: 1rem;
 }
 
@@ -47,9 +47,3 @@
     font-variant: small-caps;
     letter-spacing: 1px;
 }
-
-/* @media (min-width: 768px) {
-    .hero {
-        height: 400px;
-    }
-} */

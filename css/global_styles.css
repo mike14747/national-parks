@@ -51,6 +51,7 @@
 #root {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 html,
@@ -613,7 +614,7 @@ template {
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 /* use with elements like <header>, <nav> and <footer> */
@@ -649,7 +650,8 @@ h2.page-heading {
 @media (min-width: 768px) {
     #root {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: flex-start;
         flex-wrap: wrap;
     }
 }

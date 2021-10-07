@@ -16,7 +16,7 @@ function renderData(data, stateName) {
             <p class=description>${park.description}</p>
             <div class="img-container"><img class="image" src="${park.images[0].url}" alt="${park.images[0].altText}" /></div>
             <p class="location"><strong>Location:</strong> ${convertGPS(park.latitude, 'latitude')} ${convertGPS(park.longitude, 'longitude')}</p>
-            <p class="activities"><span class="activities-text">Activities:</span> ${park.activities.slice(0, 3).map(a => a.name).join(', ')}</p>
+            <p class="activities"><span class="activities-text">Activities:</span> ${park.activities.slice(0, 3).map(a => a.name).join(', ') || 'n/a'}</p>
             <p class="info"><a href="${park.url}" target="_blank"><span class="pointer">More Info</span></a></p>
         </div>`;
     });
@@ -30,13 +30,18 @@ async function fetchData() {
     const stateName = document.querySelector(`[value=${stateCode}]`).getAttribute('data-name');
     const url = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=100&api_key=';
 
-    try {
-        const response = await fetch(url + apiKey);
-        const data = await response.json();
-        renderData(data?.data, stateName);
-    } catch (error) {
-        console.log(error)
-    }
+    // try {
+    //     const response = await fetch(url + apiKey);
+    //     const data = await response.json();
+    //     renderData(data?.data, stateName);
+    // } catch (error) {
+    //     console.log(error)
+    // }
+
+    const data = await fetch(url + apiKey)
+        .then(res => res.json())
+        .catch(error => console.error(error));
+    if (data) renderData(data?.data, stateName);
 }
 
 fetchData();

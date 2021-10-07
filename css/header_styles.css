@@ -37,6 +37,11 @@
     font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
 }
 
+.header-right > label::before {
+    content: '\1F50E';
+    padding-right: 0.25rem;
+}
+
 .header-right > select {
     font-size: clamp(0.9rem, 0.55vw + 0.6rem, 1rem);
     background-color: #ffffff;
@@ -47,6 +52,7 @@
 
 .header-right > select > option {
     background-color: var(--mg-yellow-pale);
+    border-bottom: 1px var(--mg-gray-2) dashed;
 }
 
 .logo {
