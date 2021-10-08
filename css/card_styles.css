@@ -1,12 +1,12 @@
 .card {
     display: flex;
     flex-direction: column;
-    align-self: stretch;
+    align-items: center;
     flex: 1;
-    width: 100%;
+    width: calc(100vw - 2rem);
     min-width: 328px;
-    max-width: calc(100vw - 2rem);
-    margin: 0 auto 2rem auto;
+    max-width: 402px;
+    margin: 0 1rem 2rem 1rem;
     padding: 1rem;
     border: 1px var(--mg-gray-3) solid;
     box-shadow: 3px 3px 6px 0 var(--mg-gray-4);
@@ -68,12 +68,17 @@
 
 @media (min-width: 480px) {
     .card {
-        margin: 0 1rem 2rem 1rem;
+        width: 100%;
         min-width: 352px;
-        max-width: 402px;
     }
 
     .card:last-of-type {
         margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        align-self: stretch;
     }
 }

@@ -22,7 +22,7 @@ function renderData(data, stateName) {
     });
 
     document.getElementById('root').innerHTML = mappedDiv;
-    document.getElementById('viewing').textContent = stateName;
+    document.getElementById('viewing').textContent = stateName || '';
 }
 
 async function fetchData() {
@@ -30,18 +30,10 @@ async function fetchData() {
     const stateName = document.querySelector(`[value=${stateCode}]`).getAttribute('data-name');
     const url = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=100&api_key=';
 
-    // try {
-    //     const response = await fetch(url + apiKey);
-    //     const data = await response.json();
-    //     renderData(data?.data, stateName);
-    // } catch (error) {
-    //     console.log(error)
-    // }
-
     const data = await fetch(url + apiKey)
         .then(res => res.json())
         .catch(error => console.error(error));
-    if (data) renderData(data?.data, stateName);
+    if (data) renderData(data?.data, stateName || null);
 }
 
 fetchData();
