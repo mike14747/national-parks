@@ -44,8 +44,7 @@
 }
 
 .info {
-    text-align: right;
-    margin: 0;
+    margin: 0 0 0 auto;
 }
 
 .pointer::before {
@@ -59,6 +58,7 @@
 .activities {
     flex: 1;
     color: var(--mg-gray-6);
+    margin-right: auto;
 }
 
 .activities-text {
