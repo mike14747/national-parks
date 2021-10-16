@@ -2,22 +2,36 @@ document.getElementById("state").innerHTML = stateList.map(state => `<option dat
 
 const apiKey = 'ldPNGdkCg4MooP2qY2V5QBBwZb3nfaoFeSCij7uL';
 
-const convertGPS = (deg, dir) => Math.abs(parseFloat(deg)).toFixed(3) + ' ' + (dir === 'latitude' ? deg >= 0 ? 'N' : 'S' : deg >= 0 ? 'E' : 'W');
+const convertGPS = (deg, dir) => {
+    if (!deg || isNaN(deg)) {
+        return 'n/a';
+    }
+    return Math.abs(parseFloat(deg)).toFixed(3) + ' ' + (dir === 'latitude' ? deg >= 0 ? 'N' : 'S' : deg >= 0 ? 'E' : 'W');
+}
 
 function renderData(data, stateName) {
-    if (!data) return;
-    console.log(data);
+    if (!data) {
+        document.getElementById('root').innerHTML = '<h3 class="error">An error occurred fetching data!</h3>';
+        document.getElementById('viewing').textContent = stateName || 'n/a';
+        return;
+    }
 
     let mappedDiv = '';
 
     data.map(park => {
         mappedDiv += `<div class="card">
-            <h3>${park.fullName}</h3>
-            <p class=description>${park.description}</p>
-            <div class="img-container"><img class="image" src="${park.images[0].url}" alt="${park.images[0].altText}" /></div>
+            <h3>${park.fullName || 'Name: n/a'}</h3>
+            <p class=description>${park.description || '---no description available---'}</p>
+            <div class="img-container">
+                ${park.images[0]?.url ? `<img class="image" src="${park.images[0].url}" alt="${park.images[0].altText}" />` : '<p>---no image is available---</p>'}
+            </div>
             <p class="location"><strong>Location:</strong> ${convertGPS(park.latitude, 'latitude')} ${convertGPS(park.longitude, 'longitude')}</p>
-            <p class="activities"><span class="activities-text">Activities:</span> ${park.activities.slice(0, 3).map(a => a.name).join(', ') || 'n/a'}</p>
-            <p class="info"><a href="${park.url}" target="_blank"><span class="pointer">More Info</span></a></p>
+            <p class="activities">
+                ${park.activities?.length > 0 ? `<span class="activities-text">Activities:</span> ${park.activities.map(a => a.name).join(', ') || 'n/a'}` : '---no activities are available---'}
+            </p>
+            <p class="info">
+                ${park.url ? `<a href="${park.url}" target="_blank"><span class="pointer">More Info</span></a>` : ''}
+            </p>
         </div>`;
     });
 
